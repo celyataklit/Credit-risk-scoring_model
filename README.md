@@ -182,13 +182,14 @@ This project demonstrates direct application to financial risk management:
 credit-risk-scoring-model/
 
 ├── images/
-│   ├── dashboard_overview.png
-│   └── risk_drivers.png
+│ ├── dashboard_overview.png # Portfolio monitoring dashboard (KPIs & segmentation)
+│ └── risk_drivers.png # Behavioral risk analysis (drivers of default)
 │
-├── credit_risk_scoring_results.csv
-├── RISK_SCORING_MODEL_CT.ipynb
-├── Credit_risk_score_PBI.pbix
-├── README.md
+├── credit_risk_scoring_results.csv # Final dataset with predictions, scores & risk levels
+├── RISK_SCORING_MODEL_CT.ipynb # End-to-end Python pipeline (EDA → feature engineering → modeling)
+├── Credit_risk_score_PBI.pbix # Power BI dashboard (data model + DAX + visualizations)
+├── README.md # Project documentation
+
 ```
 
 
@@ -225,4 +226,4 @@ Open to opportunities in:
 - Risk management   
 - Data Analytics (Finance / Fintech)
 
-## 📂 Project Structure
+
