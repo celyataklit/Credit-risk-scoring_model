@@ -27,8 +27,23 @@ A fully cleaned and feature-engineered dataset was used for modeling and busines
 
 ---
 
-## ⚙️ Methodology
 
+## 🎯 Business Interpretation of the Risk Framework
+
+This framework allows financial institutions to translate model outputs into actionable financial insights:
+
+- **PD (Probability of Default)** → measures the likelihood of a client defaulting  
+- **LGD (Loss Given Default)** → estimates the percentage of exposure lost in case of default  
+- **EAD (Exposure at Default)** → represents the total exposure at risk  
+
+➡️ Combining these components provides a direct estimation of potential financial losses at both client and portfolio level.
+
+This enables:
+- Prioritization of high-risk clients
+- Better credit limit management
+- More efficient risk mitigation strategies
+
+## ⚙️ Methodology
 ### 1. Data Preparation & Feature Engineering
 
 Advanced features were created to capture credit behavior:
