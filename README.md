@@ -3,7 +3,13 @@
 End-to-end credit risk project combining **data engineering, statistical modeling, and business-oriented analytics** to support portfolio-level decision-making.
 
 ---
+## 🚀 Key Results
 
+- Predicts default probability using Machine Learning (ROC AUC ~0.75)
+- Built risk scoring system (0–100) for client segmentation
+- Estimated Expected Loss (PD × LGD × EAD)
+- Delivered interactive Power BI dashboard for risk monitoring
+  
 ## 🎯 Business Objective
 
 Financial institutions must continuously balance **risk and profitability** by identifying high-risk clients early while maintaining portfolio performance.
