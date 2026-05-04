@@ -1,43 +1,44 @@
-# 💳 Credit Risk Scoring & Expected Loss Modeling Dashboard
+# 💳 Credit Risk Scoring & Portfolio Risk Monitoring
 
-End-to-end credit risk project combining **data engineering, statistical modeling, and business-oriented analytics** to support portfolio-level decision-making.
+End-to-end credit risk project transforming raw customer and repayment data into a decision-support system for default prediction, client risk segmentation, and portfolio monitoring.
+This project transforms raw credit data into a decision-support system to predict default risk, segment clients, and monitor portfolio exposure.
 
 ---
+
 ## 🚀 Key Results
 
-- Predicts default probability using Machine Learning (ROC AUC ~0.75)
-- Built risk scoring system (0–100) for client segmentation
-- Estimated Expected Loss (PD × LGD × EAD)
-- Delivered interactive Power BI dashboard for risk monitoring
-  
-## 🎯 Business Objective
-
-Financial institutions must continuously balance **risk and profitability** by identifying high-risk clients early while maintaining portfolio performance.
-
-This project aims to:
-
-- Estimate **Probability of Default (PD)** at client level  
-- Structure **risk segmentation for portfolio management**  
-- Quantify financial exposure through **Expected Loss (EL)**  
-- Provide a **decision-oriented dashboard** for risk monitoring  
+- Built a machine learning model to predict client default risk (ROC AUC ~0.75)
+- Created a risk scoring system from 0 to 100
+- Segmented clients into Low, Medium, and High Risk categories
+- Identified key behavioral drivers of default risk
+- Delivered a Power BI dashboard to monitor portfolio exposure and risk distribution
 
 ---
 
-## 🧠 Credit Risk Framework
+## 🎯 Business Objective
 
-The project follows a simplified but realistic financial risk framework:
+Credit risk teams need to identify risky clients early, understand what drives default behavior, and monitor portfolio-level exposure.
 
-- **PD (Probability of Default)** → estimated via machine learning  
-- **LGD (Loss Given Default)** → assumed constant at 45%  
-- **EAD (Exposure at Default)** → proxied by credit limit  
+This project answers four business questions:
 
-➡️ **Expected Loss (EL) = PD × LGD × EAD**
+- Which clients are more likely to default?
+- What repayment behaviors indicate higher risk?
+- How can clients be segmented by risk level?
+- What is the current risk profile of the portfolio?
 
-This enables:
+---
 
-- Individual risk quantification  
-- Portfolio-level loss estimation  
-- Risk-based prioritization  
+## 💼 Business Value
+
+This project supports credit risk decision-making by turning raw financial data into actionable risk insights.
+
+It helps financial institutions:
+
+- Anticipate potential default before it occurs
+- Prioritize monitoring of high-risk clients
+- Understand the main factors linked to default behavior
+- Segment clients for better portfolio management
+- Monitor portfolio risk through an interactive dashboard
 
 ---
 
@@ -45,70 +46,63 @@ This enables:
 
 ### 1. Data Preparation & Feature Engineering
 
-The dataset was transformed into **behavioral and financial risk indicators**:
+The raw dataset was transformed into financial and behavioral risk indicators, including:
 
-- Number of late payments  
-- Maximum delay  
-- Average delay  
-- Total billed amount  
-- Total repayment amount  
-- Payment-to-bill ratios  
-- Credit utilization proxies  
+- Number of late payments
+- Maximum payment delay
+- Average payment delay
+- Total billed amount
+- Total repayment amount
+- Payment-to-bill ratios
+- Credit utilization proxies
 
-#### Data Treatment Strategy
-
-- Outliers handled using **percentile capping (1% / 99%)**
-- Approach chosen instead of removal to **preserve financial dispersion**
-- Ensures stability of model inputs in high-variance monetary data  
+Outliers were handled using percentile capping (1% / 99%) to preserve realistic financial dispersion while reducing the impact of extreme values.
 
 ---
 
-### 2. Predictive Modeling (Python)
+### 2. Predictive Modeling
 
-A **Logistic Regression model with L2 regularization** was implemented to estimate PD.
+A Logistic Regression model with L2 regularization was used to predict default probability.
 
-#### Rationale
+This model was selected because it is:
 
-- Interpretability (critical for financial environments)  
-- Robustness to multicollinearity  
-- Direct probability output  
+- Interpretable
+- Suitable for risk environments
+- Easy to translate into business decisions
+- Able to provide probability-based outputs
 
-#### Modeling Pipeline
+Modeling pipeline:
 
-- Train/Test split (80/20, random_state=42)  
-- Feature scaling using **StandardScaler**  
-- Class imbalance handled with **SMOTE applied on training data only**  
-- Evaluation using classification metrics  
+- Train/test split
+- Feature scaling with StandardScaler
+- SMOTE applied only on training data to handle class imbalance
+- Evaluation using ROC AUC, precision, recall, and classification metrics
 
-#### Performance
+Performance:
 
-- ROC AUC ≈ 0.75+  
-- Strong separation between default / non-default classes  
-- SMOTE improved recall on minority (default) class  
+- ROC AUC ~0.75
+- Improved detection of default-risk clients
+- Clear separation between lower-risk and higher-risk profiles
 
 ---
 
-### 3. Risk Scoring & Segmentation
+### 3. Risk Scoring & Client Segmentation
 
-Model outputs were translated into a **business-oriented scoring system**:
+Predicted probabilities were converted into a business-oriented risk score from 0 to 100.
 
-- PD → Score (0–100)  
-- Segmentation:
-  - 🟢 Low Risk  
-  - 🟡 Medium Risk  
-  - 🔴 High Risk  
+Clients were then segmented into:
 
-#### Business Purpose
+- 🟢 Low Risk
+- 🟡 Medium Risk
+- 🔴 High Risk
 
-- Simplify interpretation for non-technical stakeholders  
-- Enable risk-based decision-making  
-- Prioritize monitoring and intervention  
+This makes the model easier to use for non-technical stakeholders and supports operational credit risk monitoring.
 
 ---
 
 ## 📊 Power BI Dashboard
 
-A two-layer dashboard was developed to support **operational and analytical use cases**.
+The Power BI dashboard was designed to provide both portfolio-level monitoring and risk driver analysis.
 
 ---
 
@@ -118,15 +112,14 @@ A two-layer dashboard was developed to support **operational and analytical use 
 
 ![Dashboard Overview](images/dashboard_overview.png)
 
-This page provides a **portfolio-level view**:
+This page provides a global view of the credit portfolio:
 
-- Risk distribution across segments  
-- Default rate per segment  
-- Total client population  
-- Expected Loss estimation  
-- Score distribution  
+- Number of clients by risk segment
+- Default rate by risk level
+- Risk score distribution
+- Potential exposure and portfolio risk indicators
 
-👉 Enables **risk monitoring and exposure assessment**
+This helps stakeholders understand the current risk profile of the portfolio.
 
 ---
 
@@ -134,102 +127,97 @@ This page provides a **portfolio-level view**:
 
 ![Risk Drivers](images/risk_drivers.png)
 
-This page focuses on **behavioral risk analysis**:
+This page focuses on the behavioral factors associated with default risk:
 
-- Relationship between payment delays and default probability  
-- Distribution of late payments across risk segments  
-- Identification of key behavioral risk drivers  
+- Payment delays
+- Late payment frequency
+- Risk level distribution
+- Relationship between repayment behavior and default probability
 
-👉 Enables **understanding of default mechanisms**
+This helps identify which behaviors require stronger monitoring and attention.
 
 ---
 
 ## 💡 Key Insights
 
-- 🔴 Payment behavior (late payments, delays) is the **primary driver of default risk**  
-- 📈 Default probability increases significantly with delay severity  
-- ⚠️ High-risk clients generate the **highest expected loss per client**  
-- 📊 Medium-risk segment represents the **largest exposure volume**  
+- Payment behavior is one of the strongest indicators of default risk
+- Clients with repeated delays show higher default probability
+- Risk segmentation makes the portfolio easier to monitor and prioritize
+- The dashboard provides a clear view of portfolio risk and potential exposure
+- The project demonstrates how raw banking data can be transformed into a practical risk decision tool
 
 ---
 
-## 💼 Business Impact
+## 🧠 Credit Risk Logic
 
-This project demonstrates direct application to financial risk management:
+The project focuses primarily on default prediction, client segmentation, and portfolio monitoring.
 
-- Early identification of high-risk clients  
-- Quantification of portfolio exposure via Expected Loss  
-- Support for credit approval and limit decisions  
-- Structured portfolio segmentation for monitoring  
+A simplified Expected Loss approach was also included to connect the model output to financial risk concepts:
+
+Expected Loss = PD × LGD × EAD
+
+Where:
+
+- PD is estimated by the model
+- LGD is assumed at 45%
+- EAD is approximated using credit limit
+
+This is used as an additional portfolio risk indicator, not as the main objective of the project.
 
 ---
 
 ## ⚠️ Limitations
 
-- LGD assumed constant (no recovery modeling)  
-- EAD approximated using credit limit  
-- Logistic Regression does not capture non-linear interactions  
-- No temporal modeling (static snapshot of risk)  
+- LGD is assumed and not modeled
+- EAD is approximated using credit limit
+- Logistic Regression may not capture all non-linear relationships
+- The dataset is treated as a static snapshot, not a time-series model
 
 ---
 
-## 🧠 Technical Stack
+## 🛠️ Technical Stack
 
-- Python (Pandas, NumPy, Scikit-learn)  
-- Machine Learning (Logistic Regression, SMOTE)  
-- Data Visualization (Matplotlib, Seaborn)  
-- Power BI (Data Modeling, DAX, Dashboarding)  
+- Python: Pandas, NumPy, Scikit-learn
+- Machine Learning: Logistic Regression, SMOTE
+- Visualization: Matplotlib
+- Power BI: data modeling, dashboarding, risk KPIs
+- Git / GitHub
 
-
+---
 
 ## 📂 Project Structure
 
-```
+```text
 credit-risk-scoring-model/
 
 ├── images/
-│ ├── dashboard_overview.png # Portfolio monitoring dashboard (KPIs & segmentation)
-│ └── risk_drivers.png # Behavioral risk analysis (drivers of default)
+│   ├── dashboard_overview.png
+│   └── risk_drivers.png
 │
-├── credit_risk_scoring_results.csv # Final dataset with predictions, scores & risk levels
-├── RISK_SCORING_MODEL_CT.ipynb # End-to-end Python pipeline (EDA → feature engineering → modeling)
-├── Credit_risk_score_PBI.pbix # Power BI dashboard (data model + DAX + visualizations)
-├── README.md # Project documentation
+├── credit_risk_scoring_results.csv
+├── RISK_SCORING_MODEL_CT.ipynb
+├── Credit_risk_score_PBI.pbix
+├── README.md
 
-```
+🚀 Conclusion
 
+This project demonstrates a complete credit risk analytics workflow:
 
-## 🚀 Conclusion
+Raw data preparation
+Risk-oriented feature engineering
+Default prediction
+Client risk scoring
+Risk segmentation
+Portfolio monitoring through Power BI
 
-This project replicates a **real-world credit risk workflow**, from raw data to decision support:
+It shows the ability to bridge credit risk, financial analysis, machine learning, and business decision-making.
 
-- Feature engineering aligned with financial behavior  
-- Interpretable probability modeling  
-- Risk scoring and segmentation  
-- Business-oriented dashboarding  
-
-It demonstrates the ability to **bridge data analysis and financial decision-making**.
-
----
-
-## 🎯 Why This Project Matters
-
-This project highlights advanced capabilities required in risk/data roles:
-
-- Strong understanding of credit risk concepts  
-- Ability to build interpretable models  
-- Translation of data into actionable insights  
-- End-to-end analytical thinking  
-
----
-
-## 📬 Contact
+📬 Contact
 
 Open to opportunities in:
 
-- Financial Risk Quantitative Analysis  
-- Credit Risk Modeling
-- Risk management   
-- Data Analytics (Finance / Fintech)
-
-
+Credit Risk Analytics
+Fraud & Financial Crime Analytics
+Risk Management
+Fintech Risk Analytics
+Financial Decision Science
