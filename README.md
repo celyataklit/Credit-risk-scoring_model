@@ -198,7 +198,7 @@ credit-risk-scoring-model/
 ├── Credit_risk_score_PBI.pbix
 ├── README.md
 
----
+```
 
 ## 🚀 Conclusion
 
