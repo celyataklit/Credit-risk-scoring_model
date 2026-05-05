@@ -184,7 +184,6 @@ This is used as an additional portfolio risk indicator, not as the main objectiv
 - Git / GitHub
 
 ---
-
 ## 📂 Project Structure
 
 ```text
@@ -199,7 +198,7 @@ credit-risk-scoring-model/
 ├── Credit_risk_score_PBI.pbix
 ├── README.md
 
----
+
 ## 🚀 Conclusion
 
 This project demonstrates a complete credit risk analytics workflow:
