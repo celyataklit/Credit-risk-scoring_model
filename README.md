@@ -200,21 +200,22 @@ credit-risk-scoring-model/
 ├── README.md
 
 ---
-🚀 Conclusion
+## 🚀 Conclusion
 
 This project demonstrates a complete credit risk analytics workflow:
 
-Raw data preparation
-Risk-oriented feature engineering
-Default prediction
-Client risk scoring
-Risk segmentation
-Portfolio monitoring through Power BI
+- Raw data preparation
+- Risk-oriented feature engineering
+- Default prediction
+- Client risk scoring
+- Risk segmentation
+- Portfolio monitoring through Power BI
 
 It shows the ability to bridge credit risk, financial analysis, machine learning, and business decision-making.
 
+
 ---
-📬 Contact
+##📬 Contact
 
 Open to opportunities in:
 
