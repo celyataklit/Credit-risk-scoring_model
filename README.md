@@ -199,6 +199,7 @@ credit-risk-scoring-model/
 ├── README.md
 
 ---
+
 ## 🚀 Conclusion
 
 This project demonstrates a complete credit risk analytics workflow:
@@ -212,14 +213,14 @@ This project demonstrates a complete credit risk analytics workflow:
 
 It shows the ability to bridge credit risk, financial analysis, machine learning, and business decision-making.
 
-
 ---
-##📬 Contact
+
+## 📬 Contact
 
 Open to opportunities in:
 
-Credit Risk Analytics
-Fraud & Financial Crime Analytics
-Risk Management
-Fintech Risk Analytics
-Financial Decision Science
+- Credit Risk Analytics  
+- Fraud & Financial Crime Analytics  
+- Risk Management  
+- Fintech Risk Analytics  
+- Financial Decision Science  
