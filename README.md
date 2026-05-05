@@ -199,6 +199,7 @@ credit-risk-scoring-model/
 ├── Credit_risk_score_PBI.pbix
 ├── README.md
 
+---
 🚀 Conclusion
 
 This project demonstrates a complete credit risk analytics workflow:
@@ -212,6 +213,7 @@ Portfolio monitoring through Power BI
 
 It shows the ability to bridge credit risk, financial analysis, machine learning, and business decision-making.
 
+---
 📬 Contact
 
 Open to opportunities in:
